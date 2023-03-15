@@ -57,7 +57,7 @@ ROOT_URLCONF = "ecommerce.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -153,3 +153,7 @@ if DEBUG:
         "debug_toolbar.panels.profiling.ProfilingPanel",
     ]
     INTERNAL_IPS = ["127.0.0.1"]
+
+LOGIN_URL = "users:sign-in"
+LOGIN_REDIRECT_URL = "core:home"
+LOGOUT_REDIRECT_URL = "core:home"
