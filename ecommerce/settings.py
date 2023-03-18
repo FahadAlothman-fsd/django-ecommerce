@@ -21,7 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-++k^7+7_b4=*z!_+w9vo7zq2+qxbhk9ff030=)mubk#@!w7r67"
-
+STRIPE_SECRET_KEY = "sk_test_51Mn4CxJ05UqkwFjFVnkeifGHAI8bCvWRCYjBAqdbUp2GR9G5QJ7G5c6Lorm6tAa3wxh4mD4eCWGLS4DMmtonL9ro00nKpc2vNz"
+STRIPE_PUBLISHABLE_KEY = "pk_test_51Mn4CxJ05UqkwFjFymM2I0Yk8vHD1irFzqp2KAPhcBtPAZjDv07uABpYaBl8U0Pws5A8blRwhPspsSVrq7MXkabW00ikxQPtoI"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,6 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "users",
+    "ecommerce_django",
+    "djmoney",
+    "fontawesomefree",
+    "mathfilters",
     "django_extensions",
 ]
 
@@ -65,6 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "ecommerce.context.project_context",
             ],
         },
     },
