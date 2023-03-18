@@ -19,12 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-app_name = "core"
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls", namespace="core")),
     path("", include("users.urls", namespace="users")),
+    path("", include("ecommerce_django.urls", namespace="ecommerce")),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 
