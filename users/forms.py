@@ -46,10 +46,19 @@ class UserProfileForm(forms.ModelForm):
     country = forms.CharField(
         max_length=100, required=False, widget=forms.Select(choices=COUNTRIES)
     )
+    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = UserProfile
-        fields = ("telephone", "address", "town", "county", "post_code", "country")
+        fields = (
+            "avatar",
+            "telephone",
+            "address",
+            "town",
+            "county",
+            "post_code",
+            "country",
+        )
 
 
 class UserAlterationForm(forms.ModelForm):

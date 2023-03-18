@@ -54,6 +54,9 @@ class UserProfile(TimeStampedModel, ActivatorModel, models.Model):
     latitude = models.CharField(
         verbose_name="Latitude", max_length=50, null=True, blank=True
     )
+    avatar = models.ImageField(
+        default="default_avatar.jpg", upload_to="avatar", null=True, blank=True
+    )
 
     @property
     def country_alpha_2(self):
